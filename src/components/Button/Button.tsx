@@ -2,13 +2,17 @@ import React from "react";
 
 interface ButtonProps {
   label: string;
+  style: object;
+  onClick: () => void;
 }
 
 export default function Button(props: ButtonProps) {
-  const { label } = props;
+  const { label, onClick, style } = props;
   return (
     <>
-      <button>{label}</button>
+      <button onClick={onClick} style={style}>
+        {label}
+      </button>
     </>
   );
 }
